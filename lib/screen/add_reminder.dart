@@ -64,11 +64,11 @@ class _AddReminderState extends State<AddReminder> {
         _initValues = {
           'medicineName': _editedMed.medicineName,
           'medType': _editedMed.medType,
-          'dose': _editedMed.medType,
-          'startDate': _editedMed.medType,
-          'endDate': _editedMed.medType,
-          'schedule': _editedMed.medType,
-          'alarm': _editedMed.medType,
+          'dose': _editedMed.dose.toString(),
+          'startDate': _editedMed.startDate,
+          'endDate': _editedMed.endDate,
+          'schedule': _editedMed.schedule,
+          'alarm': _editedMed.alarm,
         };
       }
     }
@@ -326,7 +326,7 @@ class _AddReminderState extends State<AddReminder> {
                           },
                           onSaved: (value) {
                             _editedMed = Medicine(
-                              medicineName: value as String,
+                              medicineName: _editedMed.medicineName,
                               medType: _editedMed.medType,
                               dose: _editedMed.dose,
                               startDate: _editedMed.startDate,

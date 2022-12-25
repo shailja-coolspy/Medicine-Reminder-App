@@ -41,20 +41,21 @@ class AddReminderMed with ChangeNotifier{
       };
     }
     var url = Uri.https(
-        'medreminder-f7ae8-default-rtdb.firebaseio.com', '/medicine.json',_params);
+        'medreminder-f7ae8-default-rtdb.firebaseio.com','/medicine.json',_params);
     //response that contain data:::
     try {
       final response = await http.get(url);
-      
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      final List<Medicine> loadedProducts = [];
+     // print(extractedData);
+      final List<Medicine> loadedMed = [];
+
       if(extractedData==null){
         return;
       }
 
      
       extractedData.forEach((medId, medData) {
-        loadedProducts.add(Medicine(
+        loadedMed.add(Medicine(
             id: medId,
             medicineName: medData['medicineName'],
             medType: medData['medType'],
@@ -65,7 +66,7 @@ class AddReminderMed with ChangeNotifier{
             alarm: medData['alarm']
             ));
       });
-      _meds=loadedProducts;
+      _meds=loadedMed;
       notifyListeners();
     } catch (error) {
       throw error;
@@ -102,6 +103,7 @@ class AddReminderMed with ChangeNotifier{
           schedule: medicine.schedule,
           alarm: medicine.alarm);
       _meds.add(newProduct);
+      //print(newProduct.id);
       notifyListeners();
     } catch (error) {
       //print(error);

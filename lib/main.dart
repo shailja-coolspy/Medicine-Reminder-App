@@ -3,6 +3,7 @@ import 'package:medrem/providers/addReminder.dart';
 import 'package:medrem/screen/add_reminder.dart';
 import 'package:medrem/screen/auth_screen.dart';
 import 'package:medrem/screen/home_page.dart';
+import 'package:medrem/screen/med_schedule.dart';
 import 'package:medrem/widgets/alarm_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
         HomePage.routeName:(ctx)=>HomePage(),
         AddReminder.routeName:(ctx) =>AddReminder(),
         AlarmWideget.routeName:(ctx)=>AlarmWideget(),
-        //AuthScreen.routeName:(ctx)=>AuthScreen()
+        MedSchedule.routeName:(ctx)=>MedSchedule(),
+        AuthScreen.routeName:(ctx)=>AuthScreen()
       },
        
        )));
