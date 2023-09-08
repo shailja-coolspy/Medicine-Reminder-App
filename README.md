@@ -1,6 +1,8 @@
 # medrem
 
-A new Flutter project.
+
+
+<img src="https://github.com/shailja-coolspy/Medicine-Reminder-App/assets/61074568/792b3e37-bb75-4751-a08d-e3f33aa51006" width="128"/>
 
 ## Getting Started
 
